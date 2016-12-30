@@ -1,0 +1,18 @@
+
+
+Teacher
+{
+  "teacher": {
+    "first_name": "Greg",
+    "last_name": "Marr",
+  }
+}
+    Student
+        {
+      "student": {
+        "student_first_name": "Ryan",
+        "student_last_name": "Miles"
+      }
+    }
+        Test
+            Tabouts
