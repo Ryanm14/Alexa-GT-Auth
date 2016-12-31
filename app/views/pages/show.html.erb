@@ -1,13 +1,34 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-10 ">
       <h1 class="text-center">Results for <%= @first_name %> <%=  @last_name %></h1>
       <ul class="list-unstyled">
+        <% @date = @tests.first.created_at.strftime("%Y-%m-%d") %>
+        <li>
+          <div class="well row">
+            <h2 class="text-center"> <%= @date %></h2>
         <% @tests.each do |test| %>
-          <% if test.teacher_first_name == @first_name && test.teacher_last_name == @last_name %>
-            <li>
-              <div class="well row">
-                  <p> <%= test.created_at.strftime("%Y-%m-%d") %></p>
+          <% if test.created_at.strftime("%Y-%m-%d") == @date %>
+            <h3>
+              <% if test.severity == "High" %>
+                <span class="label label-danger">High</span>
+              <% end %>
+              <%= test.student_first_name %> <%= test.student_last_name %> Tabouts: <%= test.tabs.length %> Test Duration: <%= test.test_duration %> Seconds
+              </h3>
+                  <% @count = 0 %>
+                  <% test.tabs.each do |tab| %>
+                    <p> Tab <%= @count %> - Length: <%= tab.length %> Seconds</p>
+                    <% @count += 1%>
+                  <% end %> 
+              
+          <% else %>
+           <% @date = test.created_at.strftime("%Y-%m-%d") %>
+           </div>
+          </li>
+          <br>
+          <li>
+            <div class="well row">
+                  <h2> <%= @date %></h2>
                   <h3> <%= test.student_first_name %> <%= test.student_last_name %> Tabouts: <%= test.tabs.length %></h3>
                   <% @count = 0 %>
                   <% test.tabs.each do |tab| %>
@@ -15,9 +36,9 @@
                     <% @count += 1%>
                   <% end %> 
               </div>
-            </li>
-          <% end %>      
+          <% end %>
         <% end %>
+        </li>
       </ul>
     </div>
   </div>

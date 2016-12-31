@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 20161231005509) do
     t.string   "teacher_last_name"
     t.string   "student_first_name"
     t.string   "student_last_name"
+    t.string   "severity"
+    t.decimal  "test_duration"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
   end

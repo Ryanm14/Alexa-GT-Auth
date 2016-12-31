@@ -5,6 +5,8 @@ class CreateTests < ActiveRecord::Migration[5.0]
       t.string :teacher_last_name
       t.string :student_first_name
       t.string :student_last_name
+      t.string :severity
+      t.decimal :test_duration
       t.timestamps
     end
   end

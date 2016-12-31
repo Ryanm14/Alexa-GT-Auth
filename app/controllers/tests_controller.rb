@@ -11,6 +11,6 @@ class TestsController < ApplicationController
   
   private
     def test_params
-      params.require(:test).permit(:teacher_first_name, :teacher_last_name, :student_first_name, :student_last_name)
+      params.require(:test).permit(:teacher_first_name, :teacher_last_name, :student_first_name, :student_last_name, :severity, :test_duration)
     end
 end
