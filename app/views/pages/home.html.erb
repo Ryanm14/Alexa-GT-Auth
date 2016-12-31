@@ -1,1 +1,24 @@
-<%= link_to "Log In",  "#", class: 'btn btn-default navbar-btn' %>
+<div class="container">
+  <div class = "row">
+    <h3 class="text-center">Contact Us</h3>
+    
+    <div class="col-md-4 col-md-offset-4">
+      
+      <div class="well">
+         <%= form_tag('/show_tests', method: "get") do %>
+          <div class="form-group">
+            <%= label_tag(:first_name, "First Name:", class: 'form-control') %>
+            <%= text_field_tag(:first_name) %>
+          </div>
+          
+          <div class="form-group">
+            <%= label_tag(:last_name, "Last Name:", class: 'form-control') %>
+            <%= text_field_tag(:last_name) %>
+          </div>
+           <%= submit_tag("Submit", class: 'btn btn-default') %>
+        <% end %>
+        <% @first_name %>
+      </div>
+    </div>
+  </div>
+</div>

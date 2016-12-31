@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <h1 class="text-center">Results for <%= @first_name %> <%=  @last_name %></h1>
+      <ul class="list-unstyled">
+        <% @tests.each do |test| %>
+          <% if test.teacher_first_name == @first_name && test.teacher_last_name == @last_name %>
+            <li>
+              <div class="well row">
+                  <p> <%= test.created_at.strftime("%Y-%m-%d") %></p>
+                  <h3> <%= test.student_first_name %> <%= test.student_last_name %> Tabouts: <%= test.tabs.length %></h3>
+                  <% @count = 0 %>
+                  <% test.tabs.each do |tab| %>
+                    <p> Tab <%= @count %> - Length: <%= tab.length %> Seconds</p>
+                    <% @count += 1%>
+                  <% end %> 
+              </div>
+            </li>
+          <% end %>      
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
