@@ -1,17 +1,13 @@
 class PagesController < ApplicationController
   def home
+    @username = params[:username]
+    @username = params[:password]
   end
   
   def show
-    @well = true
-    @first_name = params[:first_name]
-    @last_name = params[:last_name]
-    @tests = []
-    Test.includes(:tabs).each do |test| 
-      if test.teacher_first_name == @first_name && test.teacher_last_name == @last_name
-        @tests << test
-      end
-    end
+    @username = params[:username]
+    @password = params[:password]
+    redirect_to "https://layla.amazon.com/spa/skill/account-linking-status.html?vendorId=M3STMGS1241AEG#state=xyz&access_token=" + @username.to_s + "," + @password.to_s + "&token_type=Bearer"
   end
     
 end

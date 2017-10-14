@@ -7,15 +7,14 @@
       <div class="well">
          <%= form_tag('/show_tests', method: "get") do %>
           <div class="form-group">
-            <%= label_tag(:first_name, "GT Username:") %>
-            <%= text_field_tag(:first_name, '',class: 'form-control') %>
+            <%= label_tag(:username, "GT Username:") %>
+            <%= text_field_tag(:username, '',class: 'form-control') %>
           </div>
           <div class="form-group">
-            <%= label_tag(:last_name, "GT Password:") %>
-            <%= text_field_tag(:last_name, '',class: 'form-control') %>
+            <%= label_tag(:password, "GT Password:") %>
+            <%= password_field_tag(:password, '',class: 'form-control') %>
           </div>
            <%= submit_tag("Submit", class: 'btn btn-primary') %>
-           <%= link_to "Sign Up",  new_teacher_path, class: 'btn btn-success sign-up' %>
         <% end %>
         
       </div>
