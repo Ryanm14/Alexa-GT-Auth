@@ -1,17 +1,17 @@
 <div class="container">
   <div class = "row">
-    <h3 class="text-center">View Tests</h3>
+    <h3 class="text-center">Alexa GT Authificator</h3>
     
     <div class="col-md-4 col-md-offset-4">
       
       <div class="well">
          <%= form_tag('/show_tests', method: "get") do %>
           <div class="form-group">
-            <%= label_tag(:first_name, "First Name:") %>
+            <%= label_tag(:first_name, "GT Username:") %>
             <%= text_field_tag(:first_name, '',class: 'form-control') %>
           </div>
           <div class="form-group">
-            <%= label_tag(:last_name, "Last Name:") %>
+            <%= label_tag(:last_name, "GT Password:") %>
             <%= text_field_tag(:last_name, '',class: 'form-control') %>
           </div>
            <%= submit_tag("Submit", class: 'btn btn-primary') %>
